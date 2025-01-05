@@ -9,3 +9,14 @@
     turbo_confirm: "Are you sure?"
   }%></li>
 </ul>
+
+<h2>Add attachments</h2>
+<%= form_with model: [ @post, @post.attachments.build ] do |form| %>
+<p>
+  <%= form.label :file %><br>
+  <%= form.file_field :file %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
